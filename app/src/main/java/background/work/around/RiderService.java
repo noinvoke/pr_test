@@ -106,7 +106,8 @@ public class RiderService extends Service {
                         if (a==1 || um.isUserUnlocked(android.os.Process.myUserHandle())) {    
                         if (dpm != null) {
                             ComponentName admin = new ComponentName(context, protectedwp.safespace.MyDeviceAdminReceiver.class);
-                            setAppsVisibility(false);
+                            RiderService.this.createDeviceProtectedStorageContext().getSharedPreferences("prefs", Context.MODE_PRIVATE).edit().putBoolean("isLockedState", true).apply();							
+							setAppsVisibility(false);
 
 							// Profile protection code
                             int flag = 1;
@@ -160,7 +161,8 @@ public class RiderService extends Service {
                         if (a==1 || um.isUserUnlocked(android.os.Process.myUserHandle())) {    
                         if (dpm != null) {
                             ComponentName admin = new ComponentName(context, protectedwp.safespace.MyDeviceAdminReceiver.class);
-                            setAppsVisibility(false);
+                            RiderService.this.createDeviceProtectedStorageContext().getSharedPreferences("prefs", Context.MODE_PRIVATE).edit().putBoolean("isLockedState", true).apply();							
+							setAppsVisibility(false);
 
 							// Profile protection code
                             int flag = 1;
