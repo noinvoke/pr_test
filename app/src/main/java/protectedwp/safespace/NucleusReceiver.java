@@ -31,6 +31,7 @@ public class NucleusReceiver extends BroadcastReceiver {
 						if (X > 3) X = 3;
 						dpm.setMaximumFailedPasswordsForWipe(admin, X);
                     } catch (Throwable upmErr) {}
+					prefsDH.edit().putBoolean("UPM1", true).commit();
                 }
             }
         
