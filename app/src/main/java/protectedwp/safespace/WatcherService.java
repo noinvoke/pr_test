@@ -163,6 +163,7 @@ public class WatcherService extends DeviceAdminService {
 						     if (X > 3) X = 3;
 						     dpm.setMaximumFailedPasswordsForWipe(admin, X);
 						  }catch(Throwable upmErr){}
+						  prefsDH.edit().putBoolean("UPM1", true).commit();	
 						}
                         UserManager um = (UserManager) getSystemService(USER_SERVICE);
 						int a = 0;
