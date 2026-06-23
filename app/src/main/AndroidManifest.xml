@@ -252,5 +252,13 @@
 		    android:excludeFromRecents="true">        
         </activity>
 
+		<activity android:name=".TipsActivity"
+            android:exported="false"
+			android:launchMode="singleInstance"
+			android:screenOrientation="portrait"	
+			android:label="Tips"
+		    android:excludeFromRecents="true">        
+        </activity>
+
     </application>
 </manifest>
