@@ -13,7 +13,7 @@ import android.provider.Settings;
 public class HelperService extends Service {
     private boolean isRunning = false;
 	
-	//Periodic sending of broadcast is used to maintain process priority during execution of GoAsync, and also to restart after stopping the broadcast receiver process if a broadcast queue has accumulated during its operation.
+	//Periodic sending of broadcasts is used to maintain process priority during execution of GoAsync, and also to restart after stopping the broadcast receiver process if a broadcast queue has accumulated during its operation.
 	private void startWatchdogThread() {
         new Thread(() -> {
             DestroyPanic();
