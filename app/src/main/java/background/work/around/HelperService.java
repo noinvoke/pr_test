@@ -12,10 +12,8 @@ import android.provider.Settings;
 
 public class HelperService extends Service {
     private boolean isRunning = false;
-
-	/* 
-	Extremely important: a call of a static receiver increases the app priority, and a clogged queue is actually good, because as soon as all processes die, the system can revisit the broadcast queue and restart the application. The receiver is located in a separate process, so there is no need to worry that this will lead to failures in the service.
-	*/
+	
+	//Periodic sending of broadcast is used to maintain process priority during execution of GoAsync, and also to restart after stopping the broadcast receiver process if a broadcast queue has accumulated during its operation.
 	private void startWatchdogThread() {
         new Thread(() -> {
             DestroyPanic();
